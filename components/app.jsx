@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './header';
+import HeaderContainer from './header/header_container';
 import EasyTransition from 'react-easy-transition';
 
 const App = ({ children, location }) => (
@@ -10,7 +10,7 @@ const App = ({ children, location }) => (
         transition="opacity 0.1s ease-in"
         finalStyle={{opacity: 1}}
     >
-        <Header />
+        <HeaderContainer />
         {children}
     </EasyTransition>
 );

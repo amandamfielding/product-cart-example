@@ -13,6 +13,7 @@ class ProductIndex extends React.Component {
           return (
             <ProductIndexItem
               product={product}
+              addItem={this.props.addItem}
               key={product["id"]} />
             );
           }

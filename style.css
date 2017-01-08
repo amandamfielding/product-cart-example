@@ -1,5 +1,5 @@
 html, body, header, nav, h1, a,
-ul, li, strong, main, button, i,
+ul, li, strong, main, i,
 section, img, div, h2, p, form,
 fieldset, label, input, textarea,
 span, article, footer, time, small {
@@ -21,19 +21,22 @@ span, article, footer, time, small {
 .header-container {
   background-color: #dbdbdb;
   height: 40px;
-  position: relative;
+  width: calc(100vw - 40px);
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 20px;
 }
 
-.logo {
+.header-container div {
   font-size: 22px;
-  position: absolute;
-  left: 10px;
-  top: 5px;
+  margin-top: 2px;
 }
 
 
 .products-container {
   background-color: #f4ffff;
+  padding-top: 40px;
 }
 .products {
   display: flex;
@@ -51,10 +54,6 @@ span, article, footer, time, small {
   box-shadow: 0 0 10px #efefef;
 }
 
-.product-details:hover {
-  cursor: pointer;
-}
-
 .product-pic {
   height: 320px;
   width: 320px;
@@ -66,4 +65,23 @@ span, article, footer, time, small {
   background-color: #efefef;
   padding: 10px 15px;
   font-size: 16px;
+}
+
+.price {
+  color: #000080;
+}
+
+.add-to-cart {
+  justify-content: center;
+  display: flex;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-family: 'Abel';
+  border-radius: 5px;
+}
+
+.add-to-cart:hover {
+  cursor: pointer;
+  opacity: 0.7;
 }

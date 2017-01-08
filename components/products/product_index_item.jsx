@@ -1,10 +1,10 @@
 import React from 'react';
-import { withRouter } from 'react-router';
 
-class ProductIndexItem  extends React.Component {
+class ProductIndexItem extends React.Component {
   constructor(props) {
    super(props);
- }
+   this.state = {items: []};
+  }
 
   render() {
     return (
@@ -13,12 +13,13 @@ class ProductIndexItem  extends React.Component {
           <img className="product-pic" src={"http:"+this.props.product.mainImage.ref}/>
           <div className="index-details">
             <li>{this.props.product.name}</li>
-            <li>${(this.props.product.minPrice)/100}</li>
+            <li className="price">${(this.props.product.minPrice)/100}</li>
           </div>
         </ul>
+        <button onClick={() => this.props.addItem([this.props.product])} className="add-to-cart">Add To Cart</button>
       </div>
     );
   }
 }
 
-export default withRouter(ProductIndexItem);
+export default ProductIndexItem;

@@ -1,11 +1,16 @@
 import { connect } from 'react-redux';
 import ProductIndex from './products_index';
-import { requestProducts, receiveProducts } from '../../actions/product_actions';
+import { addItem } from '../../actions/cart_actions';
 
 const mapStateToProps = ({ products }) => ({
    products: Object.keys(products).map(key => products[key])
  });
 
+ const mapDispatchToProps = (dispatch) => ({
+   addItem: item => dispatch(addItem(item))
+ });
+
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(ProductIndex);
