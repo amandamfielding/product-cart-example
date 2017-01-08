@@ -10,10 +10,12 @@ class ProductIndexItem  extends React.Component {
     return (
       <div className="product-index-item">
         <ul className="product-details">
-            <img className="item-pic" src={"http:"+this.props.product.mainImage.ref}/>
-            <li className="index-item-value">{this.props.product.name}</li>
-            <li className="index-item-value">{this.props.product.minPrice}</li>
-          </ul>
+          <img className="product-pic" src={"http:"+this.props.product.mainImage.ref}/>
+          <div className="index-details">
+            <li>{this.props.product.name}</li>
+            <li>${(this.props.product.minPrice)/100}</li>
+          </div>
+        </ul>
       </div>
     );
   }

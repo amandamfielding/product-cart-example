@@ -1,8 +1,65 @@
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+  font-family: 'Didact Gothic';
+  color: #4d4e50;
+}
+
 .header-container {
-  background-color: grey;
+  background-color: #dbdbdb;
   height: 40px;
+  position: relative;
+}
+
+.logo {
+  font-size: 22px;
+  position: absolute;
+  left: 10px;
+  top: 5px;
+}
+
+
+.products-container {
+  background-color: #f4ffff;
+}
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2%;
+}
+
+.product-index-item {
+  margin: 2%;
 }
 
 .product-details {
   list-style: none;
+  box-shadow: 0 0 10px #efefef;
+}
+
+.product-details:hover {
+  cursor: pointer;
+}
+
+.product-pic {
+  height: 300px;
+}
+
+.index-details {
+  display: flex;
+  justify-content: center;
+  background-color: #efefef;
+  padding: 10px 15px;
 }
