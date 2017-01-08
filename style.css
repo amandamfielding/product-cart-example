@@ -15,6 +15,7 @@ span, article, footer, time, small {
   background: transparent;
   font-family: 'Didact Gothic';
   color: #4d4e50;
+  font-family: 'Abel';
 }
 
 .header-container {
@@ -36,6 +37,7 @@ span, article, footer, time, small {
 }
 .products {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 2%;
 }
@@ -54,12 +56,14 @@ span, article, footer, time, small {
 }
 
 .product-pic {
-  height: 300px;
+  height: 320px;
+  width: 320px;
 }
 
 .index-details {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #efefef;
   padding: 10px 15px;
+  font-size: 16px;
 }
