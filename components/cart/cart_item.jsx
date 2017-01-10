@@ -3,6 +3,7 @@ import React from 'react';
 class CartItem extends React.Component {
   constructor(props) {
    super(props);
+   this.state = {items: this.props.item};
   }
 
   render() {
@@ -15,6 +16,7 @@ class CartItem extends React.Component {
               <li>{this.props.item.name}</li>
               <li className="price">${(this.props.item.minPrice)/100}</li>
             </div>
+            <li><button onClick={() => this.props.deleteItem(this.props.item)}>Remove</button></li>
           </div>
         </ul>
       </div>

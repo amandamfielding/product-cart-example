@@ -27,6 +27,7 @@ class Cart extends React.Component {
             <CartItem
               item={item}
               key={item.id}
+              deleteItem={this.props.deleteItem}
             />
             );
           }
