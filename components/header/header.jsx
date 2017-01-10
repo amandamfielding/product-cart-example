@@ -13,9 +13,8 @@ class Header extends React.Component {
     return (
       <div className="header-container">
         <div className="logo">FIJI Water Accessories</div>
-        <div className="cart-header">
-          <div onClick={() => this.navToCart()}>Cart |  {this.props.items.count}</div>
-          <div></div>
+        <div className="header-right">
+          <div><button onClick={() => this.navToCart()} className="cart-button">Cart</button> |    {this.props.items.length}</div>
         </div>
       </div>
     );

@@ -7,10 +7,8 @@ const CartReducer = (state = {}, action) => {
     case RECEIVE_ITEMS:
       return state.items || {};
     case ADD_ITEM:
-    debugger
       const newItem = {[action.item.id]: action.item};
       return merge({},state,newItem);
-      // return merge({}, state, {[action.item.id]:action.item});
     default:
       return state;
   }

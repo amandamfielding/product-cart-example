@@ -18,6 +18,15 @@ span, article, footer, time, small {
   font-family: 'Abel';
 }
 
+button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+ul {
+  list-style: none;
+}
+
 .header-container {
   background-color: #dbdbdb;
   height: 40px;
@@ -33,10 +42,20 @@ span, article, footer, time, small {
   margin-top: 2px;
 }
 
+.header-right {
+  display: flex;
+}
+
+.checkout, .cart-button {
+  border-radius: 5px;
+  margin: 0 10px;
+  font-size: 20px;
+  padding: 5px 10px;
+}
 
 .products-container {
   background-color: #f4ffff;
-  padding-top: 40px;
+  padding-top: 60px;
 }
 .products {
   display: flex;
@@ -50,7 +69,6 @@ span, article, footer, time, small {
 }
 
 .product-details {
-  list-style: none;
   box-shadow: 0 0 10px #efefef;
 }
 
@@ -81,7 +99,59 @@ span, article, footer, time, small {
   border-radius: 5px;
 }
 
-.add-to-cart:hover {
-  cursor: pointer;
-  opacity: 0.7;
+.items-container {
+  padding-top: 60px;
+  background-color: #f4ffff;
+  display: flex;
+}
+
+.items {
+  width: 65%;
+}
+
+.cart-details {
+  display: flex;
+}
+
+.cart-index-details {
+  width: 100%;
+  margin: 5% 0;
+  display: flex;
+  justify-content: space-between;
+  background-color:#efefef;
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+.cart-details-left {
+  display: flex;
+}
+
+.cart-details-left li {
+  margin-right: 15px;
+}
+
+.cart-pic {
+  width: 100px;
+  height: 115px;
+}
+
+.total-box {
+  width: 30%;
+  padding: 15px;
+  margin: 20px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 0 8px #efefef;
+}
+
+.total-box div, .total-box button {
+  margin: 10px 0;
+}
+
+.total {
+  font-size: 30px;
 }

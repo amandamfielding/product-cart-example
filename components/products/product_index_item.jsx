@@ -16,7 +16,7 @@ class ProductIndexItem extends React.Component {
             <li className="price">${(this.props.product.minPrice)/100}</li>
           </div>
         </ul>
-        <button onClick={() => this.props.addItem([this.props.product])} className="add-to-cart">Add To Cart</button>
+        <button onClick={() => this.props.addItem(this.props.product)} className="add-to-cart">Add To Cart</button>
       </div>
     );
   }

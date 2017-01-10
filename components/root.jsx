@@ -11,7 +11,6 @@ const Root = ({ store }) => {
 
   const _requestProducts = () => {
     store.dispatch(requestProducts());
-    // store.dispatch(receiveItems());
   };
 
   return (

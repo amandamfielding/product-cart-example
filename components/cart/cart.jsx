@@ -1,18 +1,33 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import CartItem from './cart_item';
 
 class Cart extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {total: this.calculateTotal()};
   }
+
+  navToProducts() {
+    this.props.router.push('');
+  }
+
+  calculateTotal() {
+    let total = 0;
+    this.props.items.forEach((item) => {total += (parseInt(item.minPrice)/100);});
+    return total;
+  }
+
   render() {
     if (this.props.items) {
       let items = this.props.items.map(item => {
+
         if (item) {
           return (
-            <div>
-              {item.name}
-            </div>
+            <CartItem
+              item={item}
+              key={item.id}
+            />
             );
           }
         });
@@ -20,6 +35,11 @@ class Cart extends React.Component {
           <div className="items-container">
             <div className="items">
               {items}
+            </div>
+            <div className="total-box">
+              <div className="total">Total ${this.state.total}</div>
+              <button onClick={() => alert("Sorry, I won't let you spend your hard earned money on FIJI Water bottle accessories.")} className="checkout">Checkout</button>
+              <button onClick={() => this.navToProducts()} className="checkout">Continue Shopping</button>
             </div>
           </div>
         );
