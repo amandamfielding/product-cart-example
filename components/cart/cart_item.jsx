@@ -6,6 +6,11 @@ class CartItem extends React.Component {
    this.state = {items: this.props.item};
   }
 
+  removeItem() {
+    this.props.deleteItem(this.props.item);
+    this.props.cart.calculateTotal();
+  }
+  
   render() {
     return (
       <div className="cart-item">
@@ -16,7 +21,7 @@ class CartItem extends React.Component {
               <li>{this.props.item.name}</li>
               <li className="price">${(this.props.item.minPrice)/100}</li>
             </div>
-            <li><button onClick={() => this.props.deleteItem(this.props.item)}>Remove</button></li>
+            <li><button onClick={() => this.removeItem()}>Remove</button></li>
           </div>
         </ul>
       </div>

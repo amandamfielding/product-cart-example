@@ -5,7 +5,6 @@ import CartItem from './cart_item';
 class Cart extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {total: this.calculateTotal()};
   }
 
   navToProducts() {
@@ -27,6 +26,7 @@ class Cart extends React.Component {
             <CartItem
               item={item}
               key={item.id}
+              cart={this}
               deleteItem={this.props.deleteItem}
             />
             );
@@ -38,7 +38,7 @@ class Cart extends React.Component {
               {items}
             </div>
             <div className="total-box">
-              <div className="total">Total ${this.state.total}</div>
+              <div className="total">Total ${this.calculateTotal()}</div>
               <button onClick={() => alert("Sorry, I won't let you spend your hard earned money on FIJI Water bottle accessories.")} className="checkout">Checkout</button>
               <button onClick={() => this.navToProducts()} className="checkout">Continue Shopping</button>
             </div>
