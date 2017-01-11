@@ -5,6 +5,7 @@ import CartItem from './cart_item';
 class Cart extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {checked: false};
   }
 
   navToProducts() {
@@ -14,7 +15,15 @@ class Cart extends React.Component {
   calculateTotal() {
     let total = 0;
     this.props.items.forEach((item) => {total += (parseInt(item.minPrice)/100);});
+    if (this.state.checked) {
+      total = Math.round(total * 75) / 100;
+    }
     return total;
+  }
+
+  handleCheck() {
+    this.setState({checked: this.state.checked === false ? true : false});
+    this.calculateTotal();
   }
 
   render() {
@@ -39,6 +48,13 @@ class Cart extends React.Component {
             </div>
             <div className="total-box">
               <div className="total">Total ${this.calculateTotal()}</div>
+              <label>
+                <input
+                  id="wholesale-checkbox"
+                  type="checkbox"
+                  checked={this.state.checked}
+                  onClick={() => this.handleCheck()} />
+               Wholesale</label>
               <button onClick={() => alert("Sorry, I won't let you spend your hard earned money on FIJI Water bottle accessories.")} className="checkout">Checkout</button>
               <button onClick={() => this.navToProducts()} className="checkout">Continue Shopping</button>
             </div>
